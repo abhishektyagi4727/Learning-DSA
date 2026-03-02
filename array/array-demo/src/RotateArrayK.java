@@ -1,0 +1,40 @@
+import java.util.Arrays;
+
+public class RotateArrayK
+{
+	 static int[] rotateArrayFromKPosition(int[] arr,int n) 
+	{
+		int count=0;
+		int arr2[]=arr.clone();
+		for(int i=arr.length-1;i>=0;i--)
+		{
+			arr2[count]=arr[i];
+			count++;
+		}
+		count=0;
+		int arr3[]=arr2.clone();
+		for(int i=n;i>=0;i--)
+		{
+			arr3[count]=arr2[i];
+			count++;
+		}
+		count=0;
+		int arr4[]=arr3.clone();
+		for(int i=arr3.length-1;i>arr3.length-1-n;i--)
+		{
+			arr4[count]=arr3[i];
+			count++;
+		}
+		
+		return arr2;
+	}
+	public static void main(String[] args)
+	{
+		int arr[]= {2,4,7,1,8,3};
+		int[] arr2=RotateArrayK.rotateArrayFromKPosition(arr,3);
+		System.out.println(Arrays.toString(arr2));
+	}
+
+	
+
+}

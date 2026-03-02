@@ -1,0 +1,32 @@
+
+public class LinkedList
+{
+	private Node head;
+	public LinkedList()
+	{
+		head=null;
+	}
+	//Method to add a node
+	public void addElement(int element)
+	{
+		Node newNode=new Node(element);
+		if(isEmpty())
+		{
+			head=newNode;
+			System.out.println("Head Nodeis added with data ("+element+")");
+		}
+		else
+		{
+			Node current=head;
+			while(current!=null)
+			{
+				current=current.next;
+			}
+			current=newNode;
+		}
+	}
+	public boolean isEmpty()
+	{
+		return head==null;
+	}
+}

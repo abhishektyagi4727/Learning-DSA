@@ -1,0 +1,15 @@
+
+public class Test
+{
+	public static void main(String[] args) {
+		LinkedList list=new LinkedList();
+		list.addElement(20);
+		list.addElement(30);
+		list.addElement(40);
+		list.addElement(50);
+		list.showElements();
+		System.out.println(list.search(20));
+		System.out.println(list.search(23));
+
+	}
+}

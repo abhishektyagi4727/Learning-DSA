@@ -1,0 +1,23 @@
+
+public class GetLargestNumber {
+	static int getLargestNumber(int arr[])
+	{
+		int largest=arr[0];
+		for(int i=arr.length-1;i>0;i--)
+		{
+			if(arr[i-1]>arr[i])
+			{
+				largest=arr[i];
+			}
+		}
+		return largest;
+		
+	}
+
+	public static void main(String[] args) 
+	{
+		int arr[]= {34,54,22,78,45,67};
+		System.out.println(GetLargestNumber.getLargestNumber(arr));
+	}
+
+}
