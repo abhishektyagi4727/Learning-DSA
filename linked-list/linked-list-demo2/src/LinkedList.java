@@ -79,10 +79,57 @@ public class LinkedList
 				return true;
 			}
 		}
-		
-			
 		return false;
+	}
+	//Method to add element at begnninng
+	public void addBegin(int element) 
+	{
+		Node node=new Node(element);
+		node.next=head;
+		head=node;
+	}
+	//method to add at Last
+	public void addLast(int element) {
+		Node node = new Node(element);
+		Node current=head;
+		if (head == null) {
+	        head = node;
+	        return;
+	    }
+
+		while(current.next!=null) {
+			current=current.next;
+		}
+		current.next=node;
 		
 	}
-	
+	//method to add at a particular index
+	public void add(int element,int position) {
+		Node node=new Node(element);
+		Node current=head;
+		
+		for(int i = 0; i < position - 1; i++)		{
+			current=current.next;
+		}
+
+	    node.next = current.next;
+	    current.next = node;
+	}
+	//method to reverse a linkedlist
+	public void reverse() {
+
+	    Node previous = null;
+	    Node current = head;
+	    Node next = null;
+
+	    while(current != null) {
+
+	        next = current.next;     
+	        current.next = previous; 
+	        previous = current;      
+	        current = next;          
+	    }
+
+	    head = previous;
+	}
 }
